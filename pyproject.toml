@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "poetry-template"
+version = "0.1.0"
+description = ""
+authors = ["Evan Song <evan.song@factset.com>"]
+readme = "README.md"
+packages = [
+  { include="scripts", from="." }
+]
+
+[tool.poetry.dependencies]
+python = "3.10.10"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+flake8 = "^3.9.2"
+bandit = "^1.7.0"
+isort = "^5.8.0"
+pytest = "^6.2.4"
+pytest-mock = "^3.6.1"
+pytest-cov = "^2.12.0"
+colorama = "^0.4.4"
+urllib3 = "^1.21.1"
+ipykernel = "<=6.13.0"
+pandas = "^2.0.2"
+numpy = "^1.24.3"
+ipywidgets = "^8.0.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pyright]
+exclude = [
+  "**/node_modules",
+  "**/__pycache__",
+  ".git",
+  "**/terraform",
+  "**/typings",
+  ".venv"
+]
+
+typeCheckingMode = "strict"
+
+[tool.poetry.scripts]
+type = "scripts:type"
+lint = "scripts:lint"
+test = "scripts:test"
+start = "scripts:start"
+openapi = "scripts:openapi"
+requirements = "scripts:requirements"
