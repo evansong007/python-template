@@ -3,7 +3,7 @@ from subprocess import check_call
 from colorama import Fore, Style
 
 
-def start():
+def start() -> None:
     print(Fore.LIGHTCYAN_EX + "Starting src")
     check_call(
         [

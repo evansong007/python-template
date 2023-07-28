@@ -4,7 +4,7 @@ from subprocess import check_call
 from colorama import Fore, Style
 
 
-def test():
+def test() -> None:
     print(Fore.CYAN + "Test with pytest")
     pytest_args = [
         "pytest",
@@ -14,10 +14,10 @@ def test():
         "tests/",
     ]
 
-    args = sys.argv[1:]
+    args: list[str] = sys.argv[1:]
     if "nofail" in args:
         print("Running tests without failing if under coverage")
-        pytest_args = [
+        pytest_args: list[str] = [
             "pytest",
             "--cov-report=xml",
             "--cov=src",

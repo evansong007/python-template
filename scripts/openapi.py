@@ -6,8 +6,8 @@ from typing import Any
 from colorama import Fore, Style
 
 
-def openapi():
-    check = len(sys.argv) == 2 and sys.argv[1] == "--check"
+def openapi() -> None:
+    check: bool = len(sys.argv) == 2 and sys.argv[1] == "--check"
     spec = _get_spec()
 
     if check:
@@ -26,7 +26,7 @@ def _get_spec():
     return spec
 
 
-def _check_openapi(spec: Any):
+def _check_openapi(spec: Any) -> None:
     print(Fore.LIGHTMAGENTA_EX + "Checking openapi.json is up do date")
 
     with open("openapi.json", "r") as spec_file:
@@ -42,7 +42,7 @@ def _check_openapi(spec: Any):
         sys.exit(1)
 
 
-def _generate_openapi(spec: Any):
+def _generate_openapi(spec: Any) -> None:
     print(Fore.LIGHTMAGENTA_EX + "Generating openapi.json")
 
     with open("openapi.json", "w") as spec_file:

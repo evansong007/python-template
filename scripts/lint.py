@@ -4,10 +4,15 @@ from subprocess import check_call
 from colorama import Fore, Style
 
 
-def lint():
-    args = sys.argv[1:]
-    black_args = ["black", ".", "--exclude", "typings|terraform|.venv|notebooks"]
-    isort_args = [
+def lint() -> None:
+    args: list[str] = sys.argv[1:]
+    black_args: list[str] = [
+        "black",
+        ".",
+        "--exclude",
+        "typings|terraform|.venv|notebooks",
+    ]
+    isort_args: list[str] = [
         "isort",
         ".",
         "--profile",

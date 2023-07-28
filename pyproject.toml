@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "poetry-template"
+name = "python-template"
 version = "0.1.0"
 description = ""
 authors = ["Evan Song <evan.song@factset.com>"]

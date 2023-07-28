@@ -3,7 +3,7 @@ import os
 from colorama import Fore, Style
 
 
-def type():
+def type() -> None:
     print(Fore.LIGHTYELLOW_EX + "Type check with pyright")
     status = os.system(
         "yarn global list --patern | grep -c -q 'pyright'"
