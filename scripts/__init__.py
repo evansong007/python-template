@@ -5,4 +5,4 @@ from .start import start
 from .test import test
 from .type import type
 
-__all__ = ["lint", "openapi", "start", "test", "type", "requirements"]
+__all__: list[str] = ["lint", "openapi", "start", "test", "type", "requirements"]
